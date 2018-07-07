@@ -1,0 +1,69 @@
+<!Doctype html>
+<html>
+	<body>
+		<script>
+			
+	
+			var arr = [15, 25,555,555, 250, 35, 10, 1, 2, 3, -11,256, 256, 257];
+			let l = 0;
+			let r = arr.length-1;
+		
+			
+			function sortArray(arr, l, r){
+			let i = l;
+			let j = r;
+			var temp;
+				
+				xIndex = parseInt((l+r)/2);
+				x = arr[xIndex];
+				<!-- console.log("x=="+x); -->
+				while(i<=j){
+					while(arr[i]<x){
+						i= i+1;
+						<!-- console.log("i chpoxac="+i); -->
+						
+					}
+					while(arr[j]>x){
+						j= j-1;
+						<!-- console.log("j chpoxac="+j); -->
+					}
+						if(i<=j){
+							var temp = arr[j];
+							arr[j] = arr[i];
+							arr[i] = temp;
+							i = i+1;
+							j = j-1;
+						}
+					
+				
+				}		
+				if(i<r){
+					sortArray(arr, i, r); 
+				}
+				if(l<j){
+					sortArray(arr, l, j)
+				}
+				
+				
+				return arr;
+				
+				
+			}
+			
+			sortArray(arr,l, r);
+			console.log(arr);
+			console.log(arr.length);
+			
+			
+			for(var k = arr.length-2;k > 0;k=k-1){
+				if(arr[k]<arr[arr.length-1]){
+					console.log(arr[k]);
+					break;
+				}
+			}
+			
+			
+				
+		</script>
+	</body>
+</html>
